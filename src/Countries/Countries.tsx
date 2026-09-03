@@ -11,17 +11,21 @@ export default function Countries({ countriesPromise }: CountriesProps) {
 
     const countries=use(countriesPromise);
 
-    const handleVisitedCountry=(country: CountryType):void=>{
-        const exists =visitedCountries.find(c=>c.ccn3.ccn3!==country.ccn3.ccn3)
-        if(exists){
-            const remainingVisitedCountries=visitedCountries.filter(c=>c!==country);
-            setVisitedCountries(remainingVisitedCountries);
-        }
-        else{
-            const newVisitedCountries=[...visitedCountries,country];
-            setVisitedCountries(newVisitedCountries);
-        }
+   const handleVisitedCountry = (country: CountryType): void => {
+    const exists = visitedCountries.find(
+        c => c.ccn3.ccn3 === country.ccn3.ccn3
+    );
+
+    if (exists) {
+        const remainingVisitedCountries = visitedCountries.filter(
+            c => c.ccn3.ccn3 !== country.ccn3.ccn3
+        );
+        setVisitedCountries(remainingVisitedCountries);
+    } else {
+        const newVisitedCountries = [...visitedCountries, country];
+        setVisitedCountries(newVisitedCountries);
     }
+};
     
     return (
         <div>
