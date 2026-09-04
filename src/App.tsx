@@ -1,5 +1,5 @@
 import './App.css'
-import Countries from './Countries/Countries';
+import Countries from './components/Countries/Countries';
 import type { CountryType } from './type';
 import { Suspense } from "react";
 
