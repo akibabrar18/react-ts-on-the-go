@@ -1,5 +1,5 @@
 import Country from "../Country/Country";
-import type { CountryType } from "../type"
+import type { CountryType } from "../../type"
 import { use, useState } from "react";
 import './Countries.css'
 export interface CountriesProps {
